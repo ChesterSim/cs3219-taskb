@@ -7,7 +7,7 @@ todosRouter.get("/", async (request, response) => {
   const todos = await Todo
     .find({});
 
-  response.json(todos);
+  response.status(200).json(todos);
 })
 
 todosRouter.post("/", async (request, response) => {
@@ -33,4 +33,3 @@ todosRouter.put("/:id", async (request, response) => {
 })
 
 module.exports = todosRouter;
-Repository that maintains AY20/21 Semester 1 CS3219 OTOT Task B's code base
