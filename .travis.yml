@@ -9,8 +9,13 @@ cache:
 services: mongodb
 jobs:
   include:
+    - stage: "API tests"
+      script: npm run test
     - stage: "Deploy to Heroku"
-      script: cd client/chester-todo-app && npm run build --prod && cp -r build ../../ && cd ../../
+      script: cd client/chester-todo-app && npm i && npm run build --prod && cp -r build ../../ && cd ../../
+      cache:
+        directories:
+          - node_modules
       deploy:
         provider: heroku
         api_key:
