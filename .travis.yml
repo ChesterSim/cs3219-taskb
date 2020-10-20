@@ -1,17 +1,19 @@
 language: node_js
 node_js:
-- stable
+  - stable
 env:
-- ENVIRONMENT=DEVELOPMENT
+  - ENVIRONMENT=DEVELOPMENT
 cache:
   directories:
-  - node_modules
+    - node_modules
 services: mongodb
-deploy:
-  provider: heroku
-  api_key:
-    secure: LYAJxCedUTq4wulCMYozlSMLjQ3secsRnsTg9Y3L2reGOJKTrAt/WLCEsDyZtPt0Uq+JDo9yDZTEaRWqdAoWcV2QwK6nEbLwWnrESAl7mwdPCydkK7Aydoj1xFXX+KflpPY9IBc6Q3vgks8qs4J6ccKPX97Ca642d0ZIEkyc4ZbQ552OuydHgijeiBzYvgeN5mUa0JdioekIkTFfvksJYG9UDIdyYMrkWl6YRtPJY+2S6rgwsW1oea2PNyVA+xgxBtMO/qZNT54MQGoO7je1tEgzOSCKK/0d4Aiv9+Wax72QaJMwT5zVHoj1bEa44p9ioZSkVJQcewSbgTI11a+8OaQmGAfqkukRIllZO7OVvgxf8ZmSVHZ0F+b/R15y7vCc9rz/N+Dc2CZ7qPmOwupBVdZgWYPRaqsu3gFbuB7J7IvmBIUb1ZPjPskste8E4PZ60KQSBr2oQgJGO1LJwYF/Eb8GQvsGFGf7rDPzeEt5+xMcBzn49R/6SZBhWCAYZEZZuxpA+P6UddtgKrF+SBNx6jOS3HMuPbZ84Ef7I2dhMZFwjsklFyqFmu334jGOdtuhkiXCLxBwUwCoWBasS69KOmQ1tgxSdi+Ut35sYoKQnAZThzlZ0Bs+8ezu1/nq3IiLtJ/Vu9P805IG9IykoL4j+98EB5FBisOqHDxrtvDoJu8=
-  app: safe-castle-18302
-  on:
-    repo: ChesterSim/cs3219-taskb
-  skip_cleanup: true
+jobs:
+  include:
+    deploy:
+      provider: heroku
+      api_key:
+        secure: LYAJxCedUTq4wulCMYozlSMLjQ3secsRnsTg9Y3L2reGOJKTrAt/WLCEsDyZtPt0Uq+JDo9yDZTEaRWqdAoWcV2QwK6nEbLwWnrESAl7mwdPCydkK7Aydoj1xFXX+KflpPY9IBc6Q3vgks8qs4J6ccKPX97Ca642d0ZIEkyc4ZbQ552OuydHgijeiBzYvgeN5mUa0JdioekIkTFfvksJYG9UDIdyYMrkWl6YRtPJY+2S6rgwsW1oea2PNyVA+xgxBtMO/qZNT54MQGoO7je1tEgzOSCKK/0d4Aiv9+Wax72QaJMwT5zVHoj1bEa44p9ioZSkVJQcewSbgTI11a+8OaQmGAfqkukRIllZO7OVvgxf8ZmSVHZ0F+b/R15y7vCc9rz/N+Dc2CZ7qPmOwupBVdZgWYPRaqsu3gFbuB7J7IvmBIUb1ZPjPskste8E4PZ60KQSBr2oQgJGO1LJwYF/Eb8GQvsGFGf7rDPzeEt5+xMcBzn49R/6SZBhWCAYZEZZuxpA+P6UddtgKrF+SBNx6jOS3HMuPbZ84Ef7I2dhMZFwjsklFyqFmu334jGOdtuhkiXCLxBwUwCoWBasS69KOmQ1tgxSdi+Ut35sYoKQnAZThzlZ0Bs+8ezu1/nq3IiLtJ/Vu9P805IG9IykoL4j+98EB5FBisOqHDxrtvDoJu8=
+      app: safe-castle-18302
+      on:
+        repo: ChesterSim/cs3219-taskb
+      skip_cleanup: true
