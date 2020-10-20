@@ -1,15 +1,16 @@
 language: node_js
 node_js:
-  - "stable"
+- stable
 env:
-  - ENVIRONMENT=DEVELOPMENT
+- ENVIRONMENT=DEVELOPMENT
 cache:
   directories:
-    - "node_modules"
+  - node_modules
 services: mongodb
-
 deploy:
   provider: heroku
   api_key:
-    secure: 76a05c1f-bae0-4949-97c3-d82de3372db0
+    secure: lYHtn+hE36uT34kMP23yH+LYuUtrmP62QGCLPhUC9wwRe/Y3lzzRFrOBDJNuzuHxkV6Nor8yxfpryigWN/R8smkvC43KZeDigKzPTLLS5+fNKnr2tle3LtkWQKNRP4mo7kidtQ9qUIaAXtdYhLMUWkYH6G/gJpc3Hl7oUw0LXJqyRkUvLPv6TxzEGmiSeDD+tzjQk71whfmt/6+FGyfASES8icPCu0iZ8uF9kS2P4UD4WAnE8Cs9HThIntRaPxkqaMHjqymceVUTJQmEormnbNL98T5pz6kt/4omP43kfrUJAgEIRLUG38sjouTyw7LLOCIE2MjVe3guOPPmN9oCqQaZKDl2B7viP++rtN69sabqtfUtqFN8gb1yvQ7atFXCWKy5jUDYOdtox91hldn9uTVzXXRdWJ+frdKuI9zd0fiPuvqlUnZ2KHeML5ndTvJ7jacDjDa2omy1ke2OjV1o2NGrIkyOT3N9hqZNFzihl8+08JHRQVP+UcTUzkN4wOCmg5Bg5nQ/Rq1JOQ+ia/91J1g+deAUnTw6N5TIgsbaOhN9CmbFq1tlhl1jJb5/nmmuUYhtgIpvFgw27SD+wgGRcWGu9eWyJgxOZgK6AO2HZRY5H1N6X3XXxyBEGM7rWDFrOPJtdxR3akQV4VFfiyuGowoSGwf9xJS74HGdDyAjXFo=
     app: safe-castle-18302
+  skip_cleanup: true
+dd:
