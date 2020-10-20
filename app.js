@@ -16,7 +16,7 @@ let mongoDbUri;
 if (process.env.ENVIRONMENT === "DEVELOPMENT") {
   mongoDbUri = "mongodb://127.0.0.1:27017/todo-app"; // 27017 is the default port for MongoDB
 } else {
-  mongoDbUri = "mongodb+srv://package-dev:99vnEMFTdkOmn0Is@todo-app.01jd0.mongodb.net/test?retryWrites=true&w=majority"
+  mongoDbUri = process.env.MONGOD_URI;
 }
 
 mongoose.connect(mongoDbUri,
