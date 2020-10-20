@@ -24,7 +24,9 @@ mongoose.connect(mongoDbUri,
   .then(() => console.log(`Connected to ${process.env.ENVIRONMENT} MongoDB`))
   .catch(err => console.log("Error connecting to MongoDB:", err.message));
 
-
+app.get('/', () => {
+  return `<h1>Chester Sim!</h1>`
+})
 app.use('/api/todos', todosRouter);
 
 module.exports = app;
