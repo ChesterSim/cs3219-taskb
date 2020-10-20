@@ -1,12 +1,15 @@
 language: node_js
 node_js:
   - "stable"
+env:
+  - ENVIRONMENT=DEVELOPMENT
 cache:
   directories:
     - "node_modules"
 services: mongodb
+
 deploy:
   provider: heroku
   api_key:
     secure: 76a05c1f-bae0-4949-97c3-d82de3372db0
-    app: chester-todo-app
+    app: safe-castle-18302
